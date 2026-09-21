@@ -1,4 +1,5 @@
 import re
+from datetime import datetime
 from src.masks import get_mask_account, get_mask_card_number
 
 
@@ -17,3 +18,8 @@ def mask_account_card(text: str) -> str:
         return f"Не верные данные"
 
 
+def get_date(date_iso: str) -> str:
+    """Функция форматирования даты"""
+    date_obj = datetime.fromisoformat(date_iso).date()
+    formatted = date_obj.strftime("%d.%m.%y")
+    return formatted
