@@ -1,10 +1,11 @@
 import re
 from datetime import datetime
+
 from src.masks import get_mask_account, get_mask_card_number
 
 
 def mask_account_card(text: str) -> str:
-    """ Функция обрабатывающая информацию и о картах и о считах"""
+    """Функция обрабатывающая информацию и о картах и о считах"""
     text = str(text)
     account_card = re.search(r"^([A-Za-zА-Яа-я\s]+)\s*(\d+)$", text)
     if account_card:
