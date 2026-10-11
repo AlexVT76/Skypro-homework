@@ -6,6 +6,4 @@ git clone https://github.com/AlexVT76/Skypro-homework
 2. установите зависимости 
 pip install -r requirements.txt
 ## Использование:
-
-
-## Папка tests содержит тесты функций
+## папка tests содержит тесты функций
