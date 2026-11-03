@@ -1,9 +1,7 @@
 import pytest
 
-from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
-
-from tests.conftest import transactions
-from tests.conftest import card_numbers
+from src.generators import card_number_generator, filter_by_currency, transaction_descriptions
+from tests.conftest import card_numbers, transactions
 
 
 @pytest.mark.parametrize(

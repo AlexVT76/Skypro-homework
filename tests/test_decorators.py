@@ -1,6 +1,8 @@
-from src.decorators import log
-import pytest
 import os
+
+import pytest
+
+from src.decorators import log
 
 
 def test_log_console(capsys):
