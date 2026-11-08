@@ -1,7 +1,9 @@
-import pytest
 from unittest.mock import patch
+
 import pandas as pd
+
 from src.transaction_reader import read_transactions_from_csv, read_transactions_from_excel
+
 
 def test_read_transactions_from_csv_success(caplog):
     caplog.set_level(10)  # DEBUG и выше
