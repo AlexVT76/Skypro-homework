@@ -7,7 +7,7 @@ logger.setLevel(logging.DEBUG)
 logger.propagate = False
 
 
-log_file = "logs\ utils.log"
+log_file = "logs/utils.log"
 
 file_formatter = logging.Formatter(
     fmt="%(asctime)s | %(name)s | %(levelname)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"

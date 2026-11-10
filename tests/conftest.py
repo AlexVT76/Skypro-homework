@@ -80,3 +80,15 @@ def card_numbers():
         "0000 0000 0000 0004",
         "0000 0000 0000 0005",
     ]
+
+
+@pytest.fixture
+def transactions_processing():
+    return [
+        {"id": 1, "description": "Перевод организации", "amount": 100},
+        {"id": 2, "description": "Открытие вклада", "amount": 200},
+        {"id": 3, "description": "перевод организации из СберБанка", "amount": 300},
+        {"id": 4, "description": "Перевод с карты на карту", "amount": 400},
+        {"id": 5, "description": "Покупка в магазине", "amount": 500},
+        {"id": 6, "description": "ПЕРЕВОД ОРГАНИЗАЦИИ", "amount": 600},
+    ]
