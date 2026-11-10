@@ -8,7 +8,7 @@ logger.setLevel(logging.DEBUG)
 logger.propagate = False
 
 
-log_file ="logs\ transaction_reader.log"
+log_file ="logs/transaction_reader.log"
 
 file_formatter = logging.Formatter(
     fmt="%(asctime)s | %(name)s | %(levelname)s | %(message)s", datefmt="%Y-%m-%d %H:%M:%S"
@@ -59,3 +59,8 @@ def read_transactions_from_excel(file_path: str) -> List[Dict[str, Any]]:
     except Exception as e:
         logger.error("Ошибка при чтении Excel через pandas: %s — %s", file_path, e, exc_info=True)
         return []
+import json
+
+def load_transactions_from_json(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return json.load(file)
