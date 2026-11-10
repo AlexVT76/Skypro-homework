@@ -7,9 +7,7 @@ from src.transaction_reader import read_transactions_from_csv, read_transactions
 
 def test_read_transactions_from_csv_success(caplog):
     caplog.set_level(10)  # DEBUG и выше
-    mock_df = pd.DataFrame([
-        {"id": "89531", "state": "EXECUTED", "date": "2024-01-01", "amount": "1000"}
-    ])
+    mock_df = pd.DataFrame([{"id": "89531", "state": "EXECUTED", "date": "2024-01-01", "amount": "1000"}])
 
     with patch("pandas.read_csv", return_value=mock_df):
         result = read_transactions_from_csv("fake.csv")
@@ -21,9 +19,7 @@ def test_read_transactions_from_csv_success(caplog):
 
 def test_read_transactions_from_excel_success(caplog):
     caplog.set_level(10)
-    mock_df = pd.DataFrame([
-        {"id": "89532", "state": "CANCELED", "date": "2024-01-02", "amount": "500"}
-    ])
+    mock_df = pd.DataFrame([{"id": "89532", "state": "CANCELED", "date": "2024-01-02", "amount": "500"}])
 
     with patch("pandas.read_excel", return_value=mock_df):
         result = read_transactions_from_excel("fake.xlsx")

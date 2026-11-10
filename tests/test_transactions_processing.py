@@ -1,9 +1,6 @@
 import pytest
 
-from src.transactions_processing  import process_bank_search, process_bank_operations
-
-
-
+from src.transactions_processing import process_bank_operations, process_bank_search
 
 
 def test_process_bank_search_returns_list(transactions_processing):
@@ -49,6 +46,7 @@ def test_process_bank_operations_counts_categories(transactions_processing):
     assert stats["Перевод с карты на карту"] == 1
     assert stats["Открытие вклада"] == 1
 
+
 def test_process_bank_operations_counts_categories(transactions_processing):
     categories = ["Перевод организации", "Перевод с карты на карту", "Открытие вклада"]
     stats = process_bank_operations(transactions_processing, categories)
@@ -74,6 +72,3 @@ def test_process_bank_operations_empty_transactions(transactions_processing):
 def test_process_bank_operations_empty_categories(transactions_processing):
     """Пустой список категорий — пустой словарь."""
     assert process_bank_operations(transactions_processing, []) == {}
-
-
-

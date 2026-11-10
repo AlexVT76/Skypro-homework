@@ -81,6 +81,7 @@ def card_numbers():
         "0000 0000 0000 0005",
     ]
 
+
 @pytest.fixture
 def transactions_processing():
     return [
